@@ -141,37 +141,47 @@ for (let i = 0; i < allResources.length; i += BATCH_SIZE) {
 
 ## 🤝 Contributing
 
-Contributions welcome! Please:
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📝 License
 
-MIT License - feel free to use this in your projects!
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## ⚠️ Disclaimer
 
-This tool is provided as-is. Always:
-- Test with a few images first
-- Backup important data
-- Verify migration results
-- Use at your own risk
-
-## 🙏 Credits
-
-Created by [Ricardo Camayo](https://github.com/ricardo1470)
-
-Built to solve the common problem of migrating Cloudinary assets between accounts without manual downloads.
-
-## 📧 Support
-
-For issues or questions:
-- Open an issue on GitHub
-- Contact: [your-email]
+This tool is provided **as-is**. Migration involves moving production data; please:
+- Test with a small batch of images first.
+- Ensure you have a backup of your source assets.
+- Verify the destination results before deleting source data.
+- Use at your own risk.
 
 ---
 
-**⭐ If this helped you, please star the repo!**
+## 🙏 Credits & Support
+
+**Cloudinary Migration Tool** was created by **Ricardo Camayo** to simplify asset management between accounts.
+
+If this project saved you time or helped you in your workflow, feel free to show some love:
+
+* **Share it** with others who might need it.
+* **Star the repo** to help it grow.
+* **Buy me a coffee** ☕ or a beer 🍺 to keep the code flowing!
+
+[<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/paypal.png" alt="Donate with PayPal" width="120">](https://paypal.me/ricardo1470?locale.x=es_XC)
+
+---
+
+<div align="center">
+  <h2>Let's Connect! <img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/Handshake.gif" alt="handshake" height="32px"></h2>
+
+  | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/GitHub.png" width="34">](https://github.com/ricardo1470) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/email.png" height="32">](mailto:ricardo.alfonso.camayo@gmail.com) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/linkedin-icon.png" width="32">](https://www.linkedin.com/in/ricardo-alfonso-camayo/) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/twitter.png" width="30">](https://twitter.com/RICARDO1470) |
+  |:---:|:---:|:---:|:---:|
+  | **GitHub** | **Email** | **LinkedIn** | **Twitter** |
+
+</div>
