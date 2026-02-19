@@ -171,9 +171,6 @@ If this project saved you time or helped you in your workflow, feel free to show
 
 * **Share it** with others who might need it.
 * **Star the repo** to help it grow.
-* **Buy me a coffee** ☕ or a beer 🍺 to keep the code flowing!
-
-[<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/paypal.png" alt="Donate with PayPal" width="120">](https://paypal.me/ricardo1470?locale.x=es_XC)
 
 ---
 
