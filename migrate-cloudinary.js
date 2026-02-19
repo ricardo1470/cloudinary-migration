@@ -1,8 +1,6 @@
-// migrate-cloudinary.js
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 
-// Configuración desde variables de entorno
 const sourceConfig = {
     cloud_name: process.env.SOURCE_CLOUD_NAME,
     api_key: process.env.SOURCE_API_KEY,
@@ -15,7 +13,6 @@ const destConfig = {
     api_secret: process.env.DEST_API_SECRET
 };
 
-// Validar que existan las credenciales
 if (!sourceConfig.cloud_name || !destConfig.cloud_name) {
     console.error('❌ Error: Credenciales faltantes en .env');
     process.exit(1);
@@ -27,10 +24,8 @@ async function migrateImages() {
     console.log(`📥 Destino: ${destConfig.cloud_name}\n`);
 
     try {
-        // Configurar cuenta origen
         cloudinary.config(sourceConfig);
 
-        // 1. OBTENER TODAS LAS IMÁGENES
         console.log('📥 Obteniendo lista de imágenes de la cuenta origen...');
         let allResources = [];
         let nextCursor = null;
@@ -54,7 +49,6 @@ async function migrateImages() {
         console.log('⚠️  Iniciando en 5 segundos... (Ctrl+C para cancelar)\n');
         await new Promise(resolve => setTimeout(resolve, 5000));
 
-        // 2. MIGRAR CADA IMAGEN
         console.log('🔄 Migrando a cuenta destino...\n');
         cloudinary.config(destConfig);
 
@@ -76,7 +70,6 @@ async function migrateImages() {
 
                 successCount++;
 
-                // Mostrar progreso cada 10 imágenes
                 if ((i + 1) % 10 === 0 || i === allResources.length - 1) {
                     const progress = ((i + 1) / allResources.length * 100).toFixed(1);
                     console.log(`✅ [${i + 1}/${allResources.length}] ${progress}% - ${resource.public_id}`);
@@ -89,7 +82,6 @@ async function migrateImages() {
                 console.error(`❌ [${i + 1}/${allResources.length}] ${errorMsg}`);
             }
 
-            // Pausa cada 50 imágenes para evitar rate limits
             if ((i + 1) % 50 === 0 && i < allResources.length - 1) {
                 console.log(`\n⏸️  Pausa de 3 segundos (${successCount} exitosas, ${errorCount} fallidas)...\n`);
                 await new Promise(resolve => setTimeout(resolve, 3000));
@@ -99,7 +91,6 @@ async function migrateImages() {
         const endTime = Date.now();
         const duration = ((endTime - startTime) / 1000 / 60).toFixed(2);
 
-        // 3. RESUMEN FINAL
         console.log('\n' + '='.repeat(60));
         console.log('🎉 MIGRACIÓN COMPLETADA');
         console.log('='.repeat(60));
@@ -125,5 +116,4 @@ async function migrateImages() {
     }
 }
 
-// Ejecutar
 migrateImages();
